@@ -1,0 +1,12 @@
+.area{
+	display: flex;
+}
+
+.inputArea {
+	width: 600px;
+}
+
+.outputArea {
+	margin-left: 50px;
+	margin-top: -25px;
+}
