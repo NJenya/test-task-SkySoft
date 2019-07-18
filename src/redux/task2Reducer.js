@@ -1,11 +1,11 @@
 const SET_ARRAY = 'SKYSOFTTECH/TASK2/SET_ARRAY'
-const SET_INTERVAL = 'SKYSOFTTECH/TASK2/SET_INTERVAL'
+const SET_TIME = 'SKYSOFTTECH/TASK2/SET_TIME'
 const SET_PRINTNUMBER = 'SKYSOFTTECH/TASK2/SET_PRINTNUMBER'
 const DELETE_PRINT_NUMBER = 'SKYSOFTTECH/TASK2/DELETE_PRINT_NUMBER'
 
 let initialState = {
 	array: [3, 2, 4],
-	interval: '',
+	time: null,
 	printNumber: []
 }
 
@@ -16,17 +16,19 @@ let task2Reducer = (state = initialState, action) => {
 				...state, array: action.array.split(',')
 			}
 		}
-		case SET_INTERVAL: {
+		case SET_TIME: {
 			return {
-				...state, interval: action.interval
+				...state, time: action.time
 			}
 		}
 		case SET_PRINTNUMBER: {
+			debugger
 			return {
 				...state, printNumber: [...state.printNumber, action.printNumber]
 			}
 		}
 		case DELETE_PRINT_NUMBER: {
+			debugger
 			return {
 				...state, printNumber: []
 			}
@@ -36,10 +38,21 @@ let task2Reducer = (state = initialState, action) => {
 }
 
 export const setArray = (array) => ({type: SET_ARRAY, array})
-export const setInterval = (interval) => ({type: SET_INTERVAL, interval})
+export const setTime = (time) => ({type: SET_TIME, time})
 export const setPrintNumber = (printNumber) => ({type: SET_PRINTNUMBER, printNumber})
 export const deletePrintNumber = () => ({type: DELETE_PRINT_NUMBER})
 
-
+export const startInterval = (array, interval) => (dispatch) => {
+		let newArray = [...array]
+		dispatch(deletePrintNumber())
+	let time = setInterval(function () {
+		if (newArray.length === 0) {
+			clearInterval(time)
+		} else {
+			dispatch(setPrintNumber(newArray[0]))
+			newArray = newArray.slice(1)
+		}
+	}, interval);
+}
 
 export default task2Reducer

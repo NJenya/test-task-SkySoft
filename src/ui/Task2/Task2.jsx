@@ -2,29 +2,19 @@ import React from 'react'
 import styles from "../Task2/Task2.module.css";
 
 let Task2 = (props) => {
-	debugger
+
 	let updateArray = (e) => {
 		props.setArray(e.currentTarget.value)
 	}
 
 	let updateInterval = (e) => {
-		props.setInterval(e.currentTarget.value)
+		props.setTime(e.currentTarget.value)
 	}
 
-	let newArray = [...props.array]
-
-	let startInterval = () => {
-		props.deletePrintNumber()
-		let time = setInterval(function () {
-			if (newArray.length === 0) {
-				clearInterval(time)
-			} else {
-				props.setPrintNumber(newArray[0])
-				newArray = newArray.slice(1)
-			}
-		}, props.interval);
+	let pushStartInterval = () => {
+		props.startInterval(props.array, props.time)
 	}
-
+// Used stack: functional component, routing, redux, thunk
 	return (
 		<div>
 			<div>
@@ -45,10 +35,11 @@ let Task2 = (props) => {
 						<textarea onChange={updateInterval} value={props.interval}/>
 					</div>
 					<div>
-						<button onClick={startInterval}>Print array</button>
+						<button onClick={pushStartInterval}>Print array</button>
 					</div>
 				</div>
 				<div className={styles.outputArea}>
+					<h3 style={{color: 'red'}}>Result</h3>
 					<div className={styles.printResult}>
 						{props.printNumber.map(el => <div>{el}</div>)}
 					</div>

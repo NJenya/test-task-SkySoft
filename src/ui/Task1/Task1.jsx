@@ -13,7 +13,7 @@ let Task1 = (props) => {
 		props.setResultString(res)
 
 	}
-
+// Used stack: functional component, routing, redux
 	return (
 		<div>
 			<div>
