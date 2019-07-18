@@ -1,0 +1,18 @@
+.array textarea {
+	width: 300px;
+	height: 200px;
+}
+
+.interval textarea {
+	width: 300px;
+	height: 20px;
+}
+
+.area{
+	display: flex;
+}
+
+.outputArea {
+	margin-left: 50px;
+	margin-top: 20px;
+}
