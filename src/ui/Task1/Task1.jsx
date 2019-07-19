@@ -13,11 +13,13 @@ let Task1 = (props) => {
 		props.setResultString(res)
 
 	}
-// Used stack: functional component, routing, redux
+
 	return (
 		<div>
 			<div>
-				<h2>Task 1</h2>
+				<div className={styles.taskHeader}>
+					<h2>Task 1</h2><span>solutions: functional component, routing, redux</span>
+				</div>
 				Enter or paste your string
 			</div>
 			<div className={styles.string}>

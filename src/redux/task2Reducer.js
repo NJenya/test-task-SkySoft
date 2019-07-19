@@ -22,18 +22,18 @@ let task2Reducer = (state = initialState, action) => {
 			}
 		}
 		case SET_PRINTNUMBER: {
-			debugger
 			return {
 				...state, printNumber: [...state.printNumber, action.printNumber]
 			}
 		}
 		case DELETE_PRINT_NUMBER: {
-			debugger
 			return {
 				...state, printNumber: []
 			}
 		}
-		default: {return state}
+		default: {
+			return state
+		}
 	}
 }
 
@@ -42,10 +42,13 @@ export const setTime = (time) => ({type: SET_TIME, time})
 export const setPrintNumber = (printNumber) => ({type: SET_PRINTNUMBER, printNumber})
 export const deletePrintNumber = () => ({type: DELETE_PRINT_NUMBER})
 
+let time = null
+
 export const startInterval = (array, interval) => (dispatch) => {
-		let newArray = [...array]
-		dispatch(deletePrintNumber())
-	let time = setInterval(function () {
+	clearInterval(time)
+	let newArray = [...array]
+	dispatch(deletePrintNumber())
+	time = setInterval(function () {
 		if (newArray.length === 0) {
 			clearInterval(time)
 		} else {
@@ -54,5 +57,6 @@ export const startInterval = (array, interval) => (dispatch) => {
 		}
 	}, interval);
 }
+
 
 export default task2Reducer

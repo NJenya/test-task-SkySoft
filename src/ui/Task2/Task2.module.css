@@ -16,3 +16,12 @@
 	margin-left: 50px;
 	margin-top: -25px;
 }
+
+.taskHeader {
+	display: flex;
+	align-items: center;
+}
+
+.taskHeader span {
+	margin: 0 30px;
+}

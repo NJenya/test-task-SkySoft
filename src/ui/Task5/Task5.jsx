@@ -1,9 +1,14 @@
 import React from 'react'
 
-function Task5() {
+let Task5 = ({data}) => {
+
+	let trSize = data.cells.length / data.columns.length;
+
+	for (let i = 1; i <= trSize; i++){}
+
 	return (
 		<div>
-			Task5
+
 		</div>
 	);
 }

@@ -1,19 +1,23 @@
 let searchMaxNonrepString = (string) => {
 	let result = ''
-	let str = []
-	let strfor = ''
+	let strArray = []
+	let str = ''
 	for (let i = 0; i < string.length; i++) {
-		if (strfor.indexOf(string[i]) >= 0){
-			str.push(strfor)
-			strfor = string[i]
+		if (str.indexOf(string[i]) >= 0){
+			strArray.push(str)
+			str = string[i]
 		} else {
-			strfor += string[i]
+			str += string[i]
 		}
 	}
-	for (let i = 0; i < str.length; i++) {
-		if (result.length < str[i].length) {
-			result = str[i]
+	if (strArray.length) {
+		for (let i = 0; i < strArray.length; i++) {
+			if (result.length < strArray[i].length) {
+				result = strArray[i]
+			}
 		}
+	} else {
+		result = string
 	}
 	return result;
 }

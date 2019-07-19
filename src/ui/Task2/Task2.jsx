@@ -14,11 +14,11 @@ let Task2 = (props) => {
 	let pushStartInterval = () => {
 		props.startInterval(props.array, props.time)
 	}
-// Used stack: functional component, routing, redux, thunk
+
 	return (
 		<div>
-			<div>
-				<h2>Task 2</h2>
+			<div className={styles.taskHeader}>
+				<h2>Task 2</h2><span>solutions: functional component, routing, redux, thunk</span>
 			</div>
 			<div className={styles.area}>
 				<div className={styles.inputArea}>

@@ -7,3 +7,12 @@
 	width: 600px;
 	height: 200px;
 }
+
+.taskHeader {
+	display: flex;
+	align-items: center;
+}
+
+.taskHeader span {
+	margin: 0 30px;
+}
