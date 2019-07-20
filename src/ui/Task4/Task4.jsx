@@ -7,7 +7,7 @@ let Task4 = () => {
 
 	let showedResult = () => {
 		setShowed(true)
-		let user = 'admin'
+		let user = 'admin:'
 		let log = {
 			error: myBind(console, console.log, '[Error]', user),
 			warning: myBind(console, console.log, '[Warning]', user)

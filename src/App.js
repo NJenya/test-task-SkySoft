@@ -9,39 +9,6 @@ import Header from "./ui/Header/Header";
 import Task1Container from "./ui/Task1/Task1Container";
 import Task2Container from "./ui/Task2/Task2Container";
 
-const data = {
-	columns:
-		[{
-			type: 'string',
-			filtering: true,
-			sorting: true,
-			style: {border: '1px solid black'}
-		},
-		{
-			type: 'number',
-			filtering: false,
-			sorting: false,
-			style: {border: '1px solid black'}
-		}],
-	cells:
-		[{
-			value: 'some string',
-			style: {border: '1px solid red'}
-		},
-		{
-			value: 'some string',
-			style: {border: '1px solid red'}
-		},
-		{
-			value: 43,
-			style: {border: '1px solid green'}
-		},
-		{
-			value: 57,
-			style: {border: '1px solid green'}
-		},
-		]
-}
 
 function App() {
 	return (
@@ -57,7 +24,7 @@ function App() {
 				<Route path='/task2' render={() => <Task2Container />}/>
 				<Route path='/task3' render={() => <Task3/>}/>
 				<Route path='/task4' render={() => <Task4/>}/>
-				<Route path='/task5' render={() => <Task5 data={data}/>}/>
+				<Route path='/task5' render={() => <Task5/>}/>
 			</div>
 		</div>
 	);
