@@ -19,7 +19,6 @@ class Task3 extends React.Component {
 			c: new MySingleton(),
 			d: MySingleton()
 		})
-		console.log(MySingleton)
 	}
 
 // Used stack: class component, local state

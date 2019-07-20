@@ -1,5 +1,6 @@
 import React from 'react'
 import Table from './Table'
+import styles from "../Task5/Task5.module.css";
 
 const data = {
 	columns:
@@ -30,6 +31,9 @@ const data = {
 
 let Task5 = () => {
 	return <div>
+		<div className={styles.taskHeader}>
+			<h2>Task 2</h2><span>solutions: functional component, routing, html table</span>
+		</div>
 		<Table data={data}/>
 	</div>
 }

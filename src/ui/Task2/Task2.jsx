@@ -41,7 +41,7 @@ let Task2 = (props) => {
 				<div className={styles.outputArea}>
 					<h3 style={{color: 'red'}}>Result</h3>
 					<div className={styles.printResult}>
-						{props.printNumber.map(el => <div>{el}</div>)}
+						{props.printNumber.map(el => <div key={el.id}>{el}</div>)}
 					</div>
 				</div>
 			</div>

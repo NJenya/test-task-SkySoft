@@ -1,0 +1,9 @@
+
+.taskHeader {
+	display: flex;
+	align-items: center;
+}
+
+.taskHeader span {
+	margin: 0 30px;
+}
